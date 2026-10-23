@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280, initial-scale=1">
+<title>شاشتي</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="bg"></div>
+<div id="shade"></div>
+
+<main id="home">
+  <header>
+    <div id="head">
+      <h1 id="title">شاشتي</h1>
+      <p id="subtitle"></p>
+    </div>
+    <div id="clockbox">
+      <div class="clockline"><span id="clock"></span><span id="meridiem"></span></div>
+      <p id="date"></p>
+      <p id="weather"></p>
+      <p id="match"></p>
+    </div>
+  </header>
+
+  <nav id="pills" class="row" data-row="0">
+    <button class="pill focusable" data-action="standby">شاشة التوقف</button>
+    <button class="pill focusable" data-action="reload">تحديث</button>
+  </nav>
+
+  <section>
+    <h2>تطبيقاتي</h2>
+    <div id="apps" class="row" data-row="1"></div>
+  </section>
+
+  <section>
+    <h2>مواقيت الصلاة <span id="prayer-city"></span></h2>
+    <div id="prayers"></div>
+  </section>
+
+  <p id="credit"></p>
+</main>
+
+<div id="standby" hidden>
+  <div id="s-date"><div id="s-weekday"></div><div id="s-full"></div></div>
+  <div id="s-weather"><div id="s-city"></div><div id="s-temp"></div><div id="s-hilo"></div></div>
+  <div id="s-clock"><span id="s-meridiem"></span><span id="s-time"></span></div>
+  <div id="s-strip">
+    <div class="block"><div class="label">الصلاة القادمة</div><div class="value" id="s-prayer"></div><div class="sub" id="s-prayer-sub"></div></div>
+    <div class="divider"></div>
+    <div class="block"><div class="label">رمضان</div><div class="value" id="s-ramadan"></div><div class="sub" id="s-ramadan-sub"></div></div>
+    <div class="divider" id="s-match-divider"></div>
+    <div class="block" id="s-match-block"><div class="label" id="s-match-label"></div><div class="value" id="s-match"></div><div class="sub" id="s-match-sub"></div></div>
+  </div>
+  <div id="s-credit"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

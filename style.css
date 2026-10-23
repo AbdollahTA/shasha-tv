@@ -1,0 +1,66 @@
+@font-face { font-family: Playfair; src: url(fonts/playfair.ttf); }
+@font-face { font-family: Amiri; src: url(fonts/amiri_bold.ttf); font-weight: 700; }
+@font-face { font-family: Plex; src: url(fonts/plex.ttf); }
+@font-face { font-family: Plex; src: url(fonts/plex_medium.ttf); font-weight: 500; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1280px; height: 720px; overflow: hidden; background: #000; color: #fff; font-family: Plex, sans-serif; }
+button { font: inherit; color: inherit; background: none; border: 0; outline: none; }
+
+#bg { position: fixed; inset: 0; background: #000 center / cover no-repeat; transition: opacity .9s; }
+#shade { position: fixed; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.62), rgba(0,0,0,.2) 32%, rgba(0,0,0,.55) 62%, rgba(0,0,0,.88)); }
+
+#home { position: relative; height: 100%; padding: 30px 56px 0; }
+header { display: flex; justify-content: space-between; align-items: flex-start; height: 112px; }
+#head { width: 720px; }
+#title { font-family: Playfair, Amiri, serif; font-weight: 400; font-size: 46px; line-height: 64px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: right; }
+#subtitle { font-size: 15px; color: rgba(255,255,255,.7); height: 24px; text-align: right; }
+#clockbox { text-align: left; }
+.clockline { direction: ltr; display: flex; align-items: baseline; justify-content: flex-start; gap: 6px; }
+#clock { font-family: Playfair, serif; font-size: 34px; }
+#meridiem { font-size: 15px; color: rgba(255,255,255,.85); }
+#clockbox p { font-size: 13px; color: rgba(255,255,255,.85); line-height: 21px; direction: rtl; text-align: left; }
+#match { color: rgba(255,255,255,.7) !important; }
+
+#pills { display: flex; gap: 10px; margin: 6px 0 18px; }
+.pill { height: 38px; padding: 0 18px; border-radius: 20px; background: rgba(255,255,255,.2); border: 1px solid rgba(255,255,255,.25); font-size: 14px; }
+.pill.focused { background: #fff; color: #000; border-color: #fff; }
+
+h2 { font-weight: 500; font-size: 16px; margin-bottom: 12px; }
+h2 span { font-weight: 400; color: rgba(255,255,255,.55); font-size: 14px; margin-right: 6px; }
+
+#apps { display: flex; gap: 22px; margin-bottom: 30px; }
+.tile { width: 208px; height: 117px; border-radius: 16px; overflow: hidden; position: relative; background: #222; transition: transform .14s ease-out; will-change: transform; }
+.tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tile .word { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: Playfair, serif; font-size: 30px; }
+.tile::after { content: ""; position: absolute; inset: 0; border-radius: 16px; border: 3px solid transparent; }
+.tile.focused { transform: scale(1.1); }
+.tile.focused::after { border-color: #fff; }
+
+#prayers { display: flex; gap: 14px; }
+.prayer { width: 150px; padding: 12px 16px; border-radius: 14px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.14); }
+.prayer .name { font-size: 15px; color: rgba(255,255,255,.75); }
+.prayer .time { font-size: 22px; font-weight: 500; direction: rtl; }
+.prayer.next { background: rgba(118,207,231,.22); border-color: #76CFE7; }
+.prayer.next .name { color: #fff; }
+
+#credit, #s-credit { position: fixed; bottom: 12px; left: 22px; font-size: 10px; color: rgba(255,255,255,.5); direction: rtl; }
+
+#standby { position: fixed; inset: 0; background: center / cover no-repeat; }
+#standby::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.08) 40%, rgba(0,0,0,.15) 60%, rgba(0,0,0,.8)); }
+#standby > * { position: absolute; }
+#s-date { top: 44px; right: 64px; }
+#s-weekday { font-family: Amiri, serif; font-weight: 700; font-size: 40px; }
+#s-full { font-size: 16px; color: rgba(255,255,255,.85); }
+#s-weather { top: 48px; left: 64px; text-align: left; }
+#s-city { font-size: 14px; color: rgba(255,255,255,.85); }
+#s-temp { font-weight: 500; font-size: 28px; direction: rtl; }
+#s-hilo { font-size: 14px; color: rgba(255,255,255,.7); direction: rtl; }
+#s-clock { top: 150px; right: 64px; direction: ltr; display: flex; align-items: baseline; gap: 14px; }
+#s-time { font-family: Playfair, serif; font-size: 170px; line-height: 1; text-shadow: 0 2px 10px rgba(0,0,0,.5); }
+#s-meridiem { font-size: 40px; color: rgba(255,255,255,.85); }
+#s-strip { bottom: 64px; right: 64px; left: 64px; display: flex; align-items: flex-end; }
+.block .label { font-size: 14px; color: rgba(255,255,255,.7); }
+.block .value { font-family: Amiri, serif; font-weight: 700; font-size: 30px; padding-top: 2px; }
+.block .sub { font-size: 13px; color: rgba(255,255,255,.7); }
+.divider { width: 1px; height: 64px; background: rgba(255,255,255,.3); margin: 0 40px 6px; }
